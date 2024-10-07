@@ -14,10 +14,11 @@ spec:
     spec:
       containers:
         - name: nginx
-          image: nginx:1.27.0
+          image: nginx:1.27.1
           ports:
             - containerPort: 80
           lifecycle:
             preStop:
               exec:
                 command: ["sleep", "60000"]
+      terminationGracePeriodSeconds: 60000
